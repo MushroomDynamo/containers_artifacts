@@ -1,13 +1,9 @@
 name: Docker Image CI
 
 on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
   workflow_dispatch:
 env:
-  DOCKERFILE_PATH: './dockerfiles/Dockerfile_3'
+  DOCKERFILE_PATH: ''
   DOCKER_IMAGE_NAME: 'openhack-poi'
 
 jobs:
@@ -33,4 +29,4 @@ jobs:
       with:
         push: true
         tags: registryidq6940.azurecr.io/${{env.DOCKER_IMAGE_NAME}}:latest
-        file: ./Dockerfile
+        file: ./dockerfiles/Dockerfile_3
